@@ -4,6 +4,12 @@
   "homepage": "https://password.phpmyfaq.de",
   "description": "Password Hash Generator Tool for phpMyFAQ",
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=./test/custom-test-env.js",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -13,16 +19,14 @@
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "bootstrap": "^4.4.1",
+    "fast-sha256": "^1.1.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.3.0",
     "typescript": "~3.7.2"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "jest-environment-jsdom": "^24.9.0"
   },
   "eslintConfig": {
     "extends": "react-app"

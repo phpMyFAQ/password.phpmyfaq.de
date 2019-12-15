@@ -6,14 +6,14 @@ interface InputPasswordProps {
 }
 
 function InputPassword({ label }: InputPasswordProps) {
-  return <>
-    <input
-      className={'form-control form-control-lg'}
-      type="password"
-      placeholder={label}
-      autoComplete="off"
-    />
-  </>
+  return <div className="form-group">
+    <label>{label}</label>
+      <input
+        className={'form-control form-control-lg'}
+        type="password"
+        autoComplete="off"
+      />
+  </div>
 };
 
 export default InputPassword;

@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Input from './Input/Input';
 import InputPassword from './InputPassword/InputPassword';
+import Button from './Button/Button';
 
 function App() {
   return <div className="App container">
@@ -11,14 +12,13 @@ function App() {
         Password Hash Generator Tool
       </h1>
     </header>
-    <div className="row">
-      <div className="col-12">
+    <div className="row justify-content-md-center">
+      <div className="col-6">
         <form>
-          <div className="form-group">
-            <Input label={'phpMyFAQ Salt'}/>
+            <Input label={'Your phpMyFAQ Salt'}/>
             <Input label={'Username'}/>
             <InputPassword label={'Password'}/>
-          </div>
+            <Button>Generate hash!</Button>
         </form>
       </div>
     </div>
