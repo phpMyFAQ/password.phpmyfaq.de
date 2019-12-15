@@ -4,6 +4,7 @@ import Input from './Input/Input';
 import InputPassword from './InputPassword/InputPassword';
 import Button from './Button/Button';
 import generateHash from '../services/generateHash';
+import InputReadonly from './InputReadonly/InputReadonly';
 
 function App() {
   const [ salt, setSalt ] = useState('');
@@ -32,16 +33,14 @@ function App() {
       <div className="col-6">
         <form onSubmit={handleSubmit}>
             <Input label={'Your phpMyFAQ Salt'} onChange={handleSaltChange}/>
-            <Input label={'Username'} onChange={handleUserNameChange}/>
-            <InputPassword label={'Password'} onChange={handlePasswordChange}/>
+            <Input label={'Your Username'} onChange={handleUserNameChange}/>
+            <InputPassword label={'Your Password'} onChange={handlePasswordChange}/>
             <Button>Generate hash!</Button>
+          { generatedHash &&
+            <InputReadonly label={'Generated Hash'} value={generatedHash}/>
+            
+          }
         </form>
-      </div>
-    </div>
-
-    <div className="row justify-content-md-center">
-      <div className="col-6">
-        {generatedHash && <div className="generated-hash">{generatedHash}</div>}
       </div>
     </div>
   </div>;
