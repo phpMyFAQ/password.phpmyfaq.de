@@ -25,12 +25,12 @@ function App() {
   return <div className="App container">
     <header className="app-header">
       <img src="./logo.png" className="phpmyfaq-logo" alt="phpMyFAQ Logo" />
-      <h1>
+      <h1 className="text-center">
         Password Hash Generator Tool
       </h1>
     </header>
     <div className="row justify-content-md-center">
-      <div className="col-6">
+      <div className="col-lg-6 col-sm-12">
         <form onSubmit={handleSubmit}>
             <Input label={'Your phpMyFAQ Salt'} onChange={handleSaltChange}/>
             <Input label={'Your Username'} onChange={handleUserNameChange}/>
@@ -38,11 +38,14 @@ function App() {
             <Button>Generate hash!</Button>
           { generatedHash &&
             <InputReadonly label={'Generated Hash'} value={generatedHash}/>
-            
+
           }
         </form>
       </div>
     </div>
+    <footer className="my-2 pt-2 text-muted text-center text-small">
+      © 2019 Made with <span role="img">❤</span>️ and <span role="img">☕️</span> by Thorsten Rinne
+    </footer>
   </div>;
 }
 
