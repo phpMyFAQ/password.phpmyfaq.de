@@ -4,6 +4,7 @@
   "homepage": "https://password.phpmyfaq.de",
   "description": "Password Hash Generator Tool for phpMyFAQ",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
