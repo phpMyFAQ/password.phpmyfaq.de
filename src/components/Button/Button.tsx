@@ -1,14 +1,22 @@
 import React from 'react';
 
-interface ButtonProps {
-  children: string;
+export enum ButtonType {
+  BUTTON = 'button',
+  SUBMIT = 'submit'
 }
 
-function Button({ children }: ButtonProps) {
+interface ButtonProps {
+  type: ButtonType;
+  children: string;
+  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
+}
+
+function Button({ type, children, onClick }: ButtonProps) {
   return <>
     <button
       className="btn btn-primary btn-lg btn-block"
-      type="submit"
+      onClick={onClick}
+      typeof={type}
     >
       {children}
     </button>

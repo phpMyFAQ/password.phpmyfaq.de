@@ -1,5 +1,8 @@
 # password.phpmyfaq.de
 
+This small web app creates phpMyFAQ compatible password hashes if your user is locked out and the mail recovery does
+not work for you. You have to enter the username, the new password and the salt from the database table "faqconfig".
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -15,7 +18,8 @@ You will also see any lint errors in the console.
 ### `yarn test`
 
 Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more 
+information.
 
 ### `yarn build`
 
