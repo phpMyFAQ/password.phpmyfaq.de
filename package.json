@@ -22,6 +22,7 @@
     "bootstrap": "^4.4.1",
     "fast-sha256": "^1.1.1",
     "react": "^16.12.0",
+    "react-bootstrap": "^1.0.0-beta.16",
     "react-copy-to-clipboard": "^5.0.2",
     "react-dom": "^16.12.0",
     "react-scripts": "3.3.0",
