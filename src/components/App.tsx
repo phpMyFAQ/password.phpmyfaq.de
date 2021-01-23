@@ -16,7 +16,7 @@ function App() {
   const [ salt, setSalt ] = useState('');
   const [ userName, setUserName ] = useState('');
   const [ password, setPassword ] = useState('');
-  const [ generatedHash, setGeneratedHash ] = useState();
+  const [ generatedHash, setGeneratedHash ] = useState('');
   const [ showToast, setShowToast] = useState(false);
 
   const handleSaltChange = (event: ChangeEvent<HTMLInputElement>) => setSalt(event.target.value);
