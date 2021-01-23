@@ -33,4 +33,4 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 Made with ❤️ and ☕️ by Thorsten Rinne
 
-© 2019 Thorsten Rinne 
+© 2019-2021 Thorsten Rinne 
