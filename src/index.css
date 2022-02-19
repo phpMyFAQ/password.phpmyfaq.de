@@ -12,3 +12,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+a {
+    color: darkorange;
+    text-decoration: none;
+}
+
+a:hover {
+    color: darkorange;
+    text-decoration: underline;
+}
