@@ -1,4 +1,6 @@
-import generateHash from './generateHash';
+import { generateHash } from './generateHash';
+
+global.TextEncoder = require('util').TextEncoder;
 
 describe('generateHash', () => {
   it('should return a valid string', () => {

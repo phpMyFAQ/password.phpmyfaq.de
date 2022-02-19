@@ -1,11 +1,11 @@
-import React from 'react';
+import { FunctionComponent } from 'react';
 import './Header.css';
 
 interface HeaderProps {
   title: string;
 }
 
-function Header({ title }: HeaderProps) {
+export const Header: FunctionComponent<HeaderProps> = ({ title }) => {
   return <>
     <header className="app-header">
       <img src="./logo.png" className="phpmyfaq-logo" alt="phpMyFAQ Logo"/>
@@ -15,5 +15,3 @@ function Header({ title }: HeaderProps) {
     </header>
   </>;
 }
-
-export default Header;

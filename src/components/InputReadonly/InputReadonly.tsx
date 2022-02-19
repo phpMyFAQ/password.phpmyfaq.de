@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { FunctionComponent, useState } from 'react';
 import './InputReadonly.css';
 
 interface InputReadonlyProps {
@@ -6,7 +6,7 @@ interface InputReadonlyProps {
   value: string;
 }
 
-function InputReadonly({ label, value: InputValue }: InputReadonlyProps) {
+export const InputReadonly: FunctionComponent<InputReadonlyProps> = ({ label, value: InputValue }) => {
   const [ value, setValue ] = useState(InputValue);
 
   return <div className="form-group generated-hash">
@@ -19,6 +19,4 @@ function InputReadonly({ label, value: InputValue }: InputReadonlyProps) {
       value={value}
     />
   </div>
-};
-
-export default InputReadonly;
+}

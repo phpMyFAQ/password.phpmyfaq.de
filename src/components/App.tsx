@@ -1,16 +1,16 @@
-import React, { ChangeEvent, FormEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, FunctionComponent, useState } from 'react';
 import Toast from 'react-bootstrap/Toast';
 import CopyToClipboard from 'react-copy-to-clipboard';
 
-import Header from './Header/Header';
-import Input from './Input/Input';
-import InputPassword from './InputPassword/InputPassword';
-import Button, { ButtonType } from './Button/Button';
-import generateHash from '../services/generateHash';
-import InputReadonly from './InputReadonly/InputReadonly';
-import Footer from './Footer/Footer';
+import { Header } from './Header/Header';
+import { Input } from './Input/Input';
+import { InputPassword } from './InputPassword/InputPassword';
+import { Button, ButtonType } from './Button/Button';
+import { generateHash } from '../services/generateHash';
+import { InputReadonly } from './InputReadonly/InputReadonly';
+import { Footer } from './Footer/Footer';
 
-function App() {
+export const App: FunctionComponent = () => {
   const title = 'Password Hash Generator Tool';
 
   const [ salt, setSalt ] = useState('');
@@ -67,5 +67,3 @@ function App() {
     </div>
   </>;
 }
-
-export default App;

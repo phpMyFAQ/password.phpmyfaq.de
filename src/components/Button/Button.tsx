@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 
 export enum ButtonType {
   BUTTON = 'button',
@@ -11,10 +11,10 @@ interface ButtonProps {
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
-function Button({ type, children, onClick }: ButtonProps) {
+export const Button: FunctionComponent<ButtonProps> = ({ type, children, onClick }) => {
   return <>
     <button
-      className="btn btn-primary btn-lg btn-block"
+      className="btn btn-primary btn-lg btn-block mt-4"
       onClick={onClick}
       typeof={type}
     >
@@ -22,5 +22,3 @@ function Button({ type, children, onClick }: ButtonProps) {
     </button>
     </>;
 }
-
-export default Button;

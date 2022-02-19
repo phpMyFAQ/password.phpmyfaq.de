@@ -1,11 +1,11 @@
-import React, { ChangeEvent, useState } from 'react';
+import { ChangeEvent, FunctionComponent, useState } from 'react';
 
 interface InputPasswordProps {
   label: string;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
-function InputPassword({ label, onChange }: InputPasswordProps) {
+export const InputPassword: FunctionComponent<InputPasswordProps> = ({ label, onChange }) => {
   const [ password, setPassword ] = useState('');
   const handlePasswordChange = (event: ChangeEvent<HTMLInputElement>) => {
     setPassword(event.target.value);
@@ -23,5 +23,3 @@ function InputPassword({ label, onChange }: InputPasswordProps) {
       />
   </div>
 };
-
-export default InputPassword;

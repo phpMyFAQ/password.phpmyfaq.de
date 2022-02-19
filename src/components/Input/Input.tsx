@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react';
+import { ChangeEvent, FunctionComponent, useState } from 'react';
 import './Input.css';
 
 interface InputProps {
@@ -6,7 +6,7 @@ interface InputProps {
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
-function Input({ label, onChange }: InputProps) {
+export const Input: FunctionComponent<InputProps> = ({ label, onChange }) => {
   const [ value, setValue ] = useState('');
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
@@ -16,7 +16,7 @@ function Input({ label, onChange }: InputProps) {
   return <div className="form-group">
       <label>{label}</label>
       <input
-        className={'form-control form-control-lg'}
+        className={'form-control form-control-lg mb-2'}
         type="text"
         autoComplete="off"
         required={true}
@@ -25,5 +25,3 @@ function Input({ label, onChange }: InputProps) {
       />
     </div>
 };
-
-export default Input;
