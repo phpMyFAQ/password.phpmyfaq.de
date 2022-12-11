@@ -11,7 +11,7 @@ import { InputReadonly } from './InputReadonly/InputReadonly';
 import { Footer } from './Footer/Footer';
 
 export const App: FunctionComponent = () => {
-  const title = 'Password Hash Generator Tool';
+  const title = 'Password Hash Generator Tool for phpMyFAQ';
 
   const [ salt, setSalt ] = useState('');
   const [ userName, setUserName ] = useState('');
