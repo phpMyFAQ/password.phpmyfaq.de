@@ -15,7 +15,7 @@ import { Buffer } from 'buffer';
  * @param salt
  */
 export const generateHash = (userName: string, password: string, salt: string) => {
-  const uint8array = new TextEncoder().encode(password + salt + userName);
+  const uint8array = new TextEncoder().encode(encodeURI(password) + salt + userName);
   const hash = new sha256.Hash();
 
   hash.update(uint8array);

@@ -14,4 +14,10 @@ describe('generateHash', () => {
 
     expect(result).toBe('e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855');
   });
+
+  it('should return a valid string with special characters', () => {
+    const result = generateHash('foo', '<html#>', 'baz');
+
+    expect(result).toBe('b7385df3b782339b66400089d41a142d4e007d84c94fb68397d7f4fb82e74f9b');
+  });
 });
