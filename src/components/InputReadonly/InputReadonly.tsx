@@ -1,22 +1,21 @@
-import { FunctionComponent, useState } from 'react';
+import React from 'react';
 import './InputReadonly.css';
 
 interface InputReadonlyProps {
-  label: string;
-  value: string;
+    label: string;
+    value: string;
 }
 
-export const InputReadonly: FunctionComponent<InputReadonlyProps> = ({ label, value: InputValue }) => {
-  const [ value, setValue ] = useState(InputValue);
-
-  return <div className="form-group generated-hash">
-    <label>{label}</label>
-    <input
-      className={'form-control'}
-      type="text"
-      autoComplete="off"
-      readOnly={true}
-      value={value}
-    />
-  </div>
-}
+export const InputReadonly: React.FC<InputReadonlyProps> = ({ label, value }) => {
+    return (
+        <div className="form-group">
+            <label className="form-label">{label}</label> {/* Add Bootstrap form-label class */}
+            <input
+                className="form-control"
+                type="text"
+                value={value}
+                readOnly
+            />
+        </div>
+    );
+};

@@ -1,17 +1,17 @@
-import { FunctionComponent } from 'react';
+import React from 'react';
 import './Header.css';
 
 interface HeaderProps {
-  title: string;
+    title: string;
 }
 
-export const Header: FunctionComponent<HeaderProps> = ({ title }) => {
-  return <>
-    <header className="app-header">
-      <img src="./logo.png" className="phpmyfaq-logo" alt="phpMyFAQ Logo"/>
-      <h1 className="text-center">
-        {title}
-      </h1>
-    </header>
-  </>;
-}
+export const Header: React.FC<HeaderProps> = ({ title }) => {
+    return (
+        <header className="app-header">
+            <img src="./logo.png" className="phpmyfaq-logo" alt="phpMyFAQ company logo" />
+            <h1 className="text-center">
+                {title}
+            </h1>
+        </header>
+    );
+};

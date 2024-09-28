@@ -1,25 +1,26 @@
-import { ChangeEvent, FunctionComponent, useState } from 'react';
+import React, { ChangeEvent } from 'react';
 
 interface InputPasswordProps {
-  label: string;
-  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+    label: string;
+    value: string;
+    name: string;
+    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+    required?: boolean;
 }
 
-export const InputPassword: FunctionComponent<InputPasswordProps> = ({ label, onChange }) => {
-  const [ password, setPassword ] = useState('');
-  const handlePasswordChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setPassword(event.target.value);
-    onChange(event);
-  };
-  return <div className="form-group">
-    <label>{label}</label>
-      <input
-        className={'form-control form-control-lg'}
-        type="password"
-        autoComplete="off"
-        required={true}
-        value={password}
-        onChange={handlePasswordChange}
-      />
-  </div>
+export const InputPassword: React.FC<InputPasswordProps> = ({ label, value, name, onChange, required }) => {
+    return (
+        <div className="form-group">
+            <label className="form-label" htmlFor={name}>{label}</label> {/* Add Bootstrap form-label class */}
+            <input
+                id={name}
+                className="form-control"
+                type="password"
+                name={name}
+                value={value}
+                onChange={onChange}
+                required={required}
+            />
+        </div>
+    );
 };

@@ -1,27 +1,27 @@
-import { ChangeEvent, FunctionComponent, useState } from 'react';
+import React, { ChangeEvent } from 'react';
 import './Input.css';
 
 interface InputProps {
-  label: string;
-  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+    label: string;
+    value: string;
+    name: string;
+    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+    required?: boolean;
 }
 
-export const Input: FunctionComponent<InputProps> = ({ label, onChange }) => {
-  const [ value, setValue ] = useState('');
-  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
-    onChange(event);
-  };
-
-  return <div className="form-group">
-      <label>{label}</label>
-      <input
-        className={'form-control form-control-lg mb-2'}
-        type="text"
-        autoComplete="off"
-        required={true}
-        value={value}
-        onChange={handleInputChange}
-      />
-    </div>
+export const Input: React.FC<InputProps> = ({ label, value, name, onChange, required }) => {
+    return (
+        <div className="form-group mb-4">
+            <label className="form-label" htmlFor={name}>{label}</label>
+            <input
+                id={name}
+                className="form-control"
+                type="text"
+                name={name}
+                value={value}
+                onChange={onChange}
+                required={required}
+            />
+        </div>
+    );
 };
