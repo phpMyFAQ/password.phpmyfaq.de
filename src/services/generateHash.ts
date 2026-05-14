@@ -17,21 +17,21 @@ import { Buffer } from 'buffer';
  * @returns The generated hash in hexadecimal format
  */
 export const generateHash = (userName: string, password: string, salt: string): string => {
-  if (!userName) {
-    throw new Error('userName must be provided');
-  }
-  if (!password) {
-    throw new Error('password must be provided');
-  }
-  if (!salt) {
-    throw new Error('salt must be provided');
-  }
+    if (!userName) {
+        throw new Error('userName must be provided');
+    }
+    if (!password) {
+        throw new Error('password must be provided');
+    }
+    if (!salt) {
+        throw new Error('salt must be provided');
+    }
 
-  const inputString = `${encodeURI(password)}${salt}${userName}`;
-  const uint8array = new TextEncoder().encode(inputString);
+    const inputString = `${encodeURI(password)}${salt}${userName}`;
+    const uint8array = new TextEncoder().encode(inputString);
 
-  const hash = new Hash();
-  hash.update(uint8array);
+    const hash = new Hash();
+    hash.update(uint8array);
 
-  return Buffer.from(hash.digest()).toString('hex');
+    return Buffer.from(hash.digest()).toString('hex');
 };

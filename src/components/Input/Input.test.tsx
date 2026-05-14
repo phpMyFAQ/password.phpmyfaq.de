@@ -1,7 +1,5 @@
-// Input.test.tsx
 import React, { useState } from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import { Input } from './Input';
 
 describe('Input Component', () => {

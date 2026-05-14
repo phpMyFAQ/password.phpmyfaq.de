@@ -11,7 +11,10 @@ interface InputPasswordProps {
 export const InputPassword: React.FC<InputPasswordProps> = ({ label, value, name, onChange, required }) => {
     return (
         <div className="form-group">
-            <label className="form-label" htmlFor={name}>{label}</label> {/* Add Bootstrap form-label class */}
+            <label className="form-label" htmlFor={name}>
+                {label}
+            </label>{' '}
+            {/* Add Bootstrap form-label class */}
             <input
                 id={name}
                 className="form-control"

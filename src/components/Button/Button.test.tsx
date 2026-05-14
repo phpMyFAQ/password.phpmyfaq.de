@@ -1,6 +1,4 @@
-import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import { Button, ButtonType } from './Button';
 
 describe('Button Component', () => {
@@ -15,8 +13,12 @@ describe('Button Component', () => {
     });
 
     test('calls onClick handler when clicked', () => {
-        const handleClick = jest.fn();
-        render(<Button type={ButtonType.BUTTON} onClick={handleClick}>Click Me</Button>);
+        const handleClick = vi.fn();
+        render(
+            <Button type={ButtonType.BUTTON} onClick={handleClick}>
+                Click Me
+            </Button>
+        );
         fireEvent.click(screen.getByRole('button'));
         expect(handleClick).toHaveBeenCalledTimes(1);
     });

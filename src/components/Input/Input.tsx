@@ -12,7 +12,9 @@ interface InputProps {
 export const Input: React.FC<InputProps> = ({ label, value, name, onChange, required }) => {
     return (
         <div className="form-group mb-4">
-            <label className="form-label" htmlFor={name}>{label}</label>
+            <label className="form-label" htmlFor={name}>
+                {label}
+            </label>
             <input
                 id={name}
                 className="form-control"

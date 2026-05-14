@@ -1,6 +1,5 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react';
 import Toast from 'react-bootstrap/Toast';
-import CopyToClipboard from 'react-copy-to-clipboard';
 
 import { Header } from './Header/Header';
 import { Input } from './Input/Input';
@@ -81,17 +80,46 @@ export const App: React.FC = () => {
                 <div className="row justify-content-md-center">
                     <div className="col-lg-6 col-sm-12">
                         <form onSubmit={handleSubmit}>
-                            <Input label="Your phpMyFAQ Salt" onChange={handleInputChange} value={salt} name="salt" required />
-                            <Input label="Your Username" onChange={handleInputChange} value={userName} name="userName" required />
-                            <InputPassword label="New Password" onChange={handleInputChange} value={password} name="password" required />
-                            <Button type={ButtonType.SUBMIT}>Generate hash!</Button>
+                            <Input
+                                label="Your phpMyFAQ Salt"
+                                onChange={handleInputChange}
+                                value={salt}
+                                name="salt"
+                                required
+                            />
+                            <Input
+                                label="Your Username"
+                                onChange={handleInputChange}
+                                value={userName}
+                                name="userName"
+                                required
+                            />
+                            <InputPassword
+                                label="New Password"
+                                onChange={handleInputChange}
+                                value={password}
+                                name="password"
+                                required
+                            />
+                            <div className="text-center">
+                                <Button type={ButtonType.SUBMIT}>Generate hash!</Button>
+                            </div>
 
                             {generatedHash && (
-                                <div class="mt-4">
+                                <div className="mt-4">
                                     <InputReadonly label="Generated Hash" value={generatedHash} />
-                                    <CopyToClipboard text={generatedHash} onCopy={() => setToastMessage('Generated hash successfully copied to clipboard!')}>
-                                        <Button type={ButtonType.BUTTON}>Copy to clipboard</Button>
-                                    </CopyToClipboard>
+                                    <div className="text-center">
+                                        <Button
+                                            type={ButtonType.BUTTON}
+                                            onClick={async () => {
+                                                await navigator.clipboard.writeText(generatedHash);
+                                                setToastMessage('Generated hash successfully copied to clipboard!');
+                                                setShowToast(true);
+                                            }}
+                                        >
+                                            Copy to clipboard
+                                        </Button>
+                                    </div>
                                 </div>
                             )}
                         </form>

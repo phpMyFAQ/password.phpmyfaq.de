@@ -2,7 +2,7 @@ import React from 'react';
 
 export enum ButtonType {
     BUTTON = 'button',
-    SUBMIT = 'submit'
+    SUBMIT = 'submit',
 }
 
 interface ButtonProps {
@@ -14,7 +14,7 @@ interface ButtonProps {
 export const Button: React.FC<ButtonProps> = ({ type, children, onClick }) => {
     return (
         <button
-            className="btn btn-primary btn-lg btn-block mt-4"
+            className="btn btn-primary btn-lg mt-4"
             onClick={onClick}
             type={type} // Fixed the attribute name
         >
